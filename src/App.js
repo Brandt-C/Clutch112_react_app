@@ -5,6 +5,7 @@ import Nav from './components/Nav';
 import Home from './views/Home';
 import Shop from './views/Shop';
 import { useState } from 'react';
+import Cart from './views/Cart';
 
 // a quick note on props vs state:
 // props- is an object of arbitary inputs a React component accepts as the first arguement
@@ -21,6 +22,7 @@ function App() {
         {/*  any 'page' of our app can be defined as a route here */}
         <Route children path='/' element={<Home teachers={teachers} setTeachers={setTeachers}/>} />
         <Route children path='/shop' element={<Shop />} />
+        <Route children path='/cart' element={<Cart />} />
 
       </Routes>
 

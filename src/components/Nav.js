@@ -10,6 +10,7 @@ const Nav = props => {
                 <div className="nav navbar-nav">
                     <Link className="nav-item nav-link active" to='/'>Home</Link>
                     <Link className="nav-item nav-link active" to='/shop'>Shop</Link>
+                    <Link className="nav-item nav-link active" to='/cart'>Cart</Link>
                 </div>
                 <span>{props.teachers[Math.floor(Math.random()*props.teachers.length)]}</span>
             </nav>
