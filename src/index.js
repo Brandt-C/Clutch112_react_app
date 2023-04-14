@@ -6,12 +6,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import ProviderLayer from './ProviderLayer';
+import { FirebaseAppProvider } from 'reactfire';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAj5a3GriJpGU1OEe4THLwGmPpoHE34IEM",
+  authDomain: "clutch-react-b165b.firebaseapp.com",
+  projectId: "clutch-react-b165b",
+  storageBucket: "clutch-react-b165b.appspot.com",
+  messagingSenderId: "6180294199",
+  appId: "1:6180294199:web:404c0f2ea76f0fc607f9b2"
+};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ProviderLayer />
+      <FirebaseAppProvider  firebaseConfig={firebaseConfig}>
+        <ProviderLayer />
+      </FirebaseAppProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

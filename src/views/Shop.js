@@ -1,6 +1,8 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import { DataContext } from "../context/DataProvider";
+import { useDatabase, useUser } from "reactfire";
+import { ref, set } from "firebase/database";
 
 const Shop = () => {
     /* What now?
@@ -9,10 +11,13 @@ const Shop = () => {
     3. set that state variable based on the API call
     4.  Set up a way to display those products (otherwise we'll show loading)
     */
+
+    const db = useDatabase();
+    const { data:user } = useUser();
+
     const web_url = 'https://clutch-flask.onrender.com/api/products';
     const local_url = 'http://127.0.0.1:5000/api/products';
     console.log(web_url, local_url);
-    useEffect(() => { console.log('Shop component has rendered (or re-rendered)') });
 
     const getProductData = async () => {
         let response = await axios.get(web_url);
@@ -50,7 +55,9 @@ const Shop = () => {
         :
         copyCart.products[product.id] = {data: product, quantity:1};
         console.log(copyCart);
-        
+        if (user){
+            set(ref(db, 'carts/' + user.uid), copyCart);
+        }
         setCart(copyCart)
     }
 
