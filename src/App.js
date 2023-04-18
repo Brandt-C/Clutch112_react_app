@@ -6,6 +6,7 @@ import Home from './views/Home';
 import Shop from './views/Shop';
 import { useState } from 'react';
 import Cart from './views/Cart';
+import Checkout from './views/Checkout';
 
 // a quick note on props vs state:
 // props- is an object of arbitary inputs a React component accepts as the first arguement
@@ -23,6 +24,7 @@ function App() {
         <Route children path='/' element={<Home teachers={teachers} setTeachers={setTeachers}/>} />
         <Route children path='/shop' element={<Shop />} />
         <Route children path='/cart' element={<Cart />} />
+        <Route children path='/checkout' element={<Checkout />} />
 
       </Routes>
 
