@@ -8,13 +8,23 @@ import { BrowserRouter } from 'react-router-dom';
 import ProviderLayer from './ProviderLayer';
 import { FirebaseAppProvider } from 'reactfire';
 
+const FIREBASE_API_KEY = process.env.REACT_APP_FIREBASE_API_KEY;
+const FIREBASE_AUTH_DOMAIN = process.env.REACT_APP_FIREBASE_AUTH_DOMAIN;
+const FIREBASE_PROJECT_ID = process.env.REACT_APP_FIREBASE_PROJECT_ID;
+const FIREBASE_STORAGE_BUCKET = process.env.REACT_APP_FIREBASE_STORAGE_BUCKET;
+const FIREBASE_MESSAGE_ID = process.env.REACT_APP_FIREBASE_MESSAGE_ID;
+const FIREBASE_APP_ID = process.env.REACT_APP_FIREBASE_APP_ID;
+const FIREBASE_DB_URL = process.env.REACT_APP_FIREBASE_DB_URL;
+
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAj5a3GriJpGU1OEe4THLwGmPpoHE34IEM",
-  authDomain: "clutch-react-b165b.firebaseapp.com",
-  projectId: "clutch-react-b165b",
-  storageBucket: "clutch-react-b165b.appspot.com",
-  messagingSenderId: "6180294199",
-  appId: "1:6180294199:web:404c0f2ea76f0fc607f9b2"
+  apiKey: FIREBASE_API_KEY,
+  authDomain: FIREBASE_AUTH_DOMAIN,
+  projectId: FIREBASE_PROJECT_ID,
+  storageBucket: FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: FIREBASE_MESSAGE_ID,
+  appId: FIREBASE_APP_ID,
+  databaseURL: FIREBASE_DB_URL,
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

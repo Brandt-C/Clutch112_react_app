@@ -26,7 +26,7 @@ const Shop = () => {
 
     const loadProductData = async () => {
         let data = await getProductData();
-        console.log(data, typeof data);
+        // console.log(data, typeof data);
         setProducts(data.data)
 
     }
