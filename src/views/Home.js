@@ -57,11 +57,11 @@ const Home = props => {
             <h1> There is no place like home Toto</h1>
             <h3>{animal}</h3>
             {/* <h3>{x}</h3> */}
-            <button className="btn btn-warning" onClick={changeAnimal}>Change Animal</button>
+            <button className="btn btn-warning w-25" onClick={changeAnimal}>Change Animal</button>
         </div>
         <div>
                         <h2>Our Teachers:</h2>
-            <button className="btn btn-primary" onClick={changeTeacherOrder}>Change Teacher Order</button>
+            <button className="btn btn-primary w-25" onClick={changeTeacherOrder}>Change Teacher Order</button>
             {props.teachers.map((teacher, index) => {
                 return <h3 key={index}>{teacher}</h3>
             })}

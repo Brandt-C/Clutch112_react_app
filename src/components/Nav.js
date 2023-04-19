@@ -61,9 +61,9 @@ const Nav = props => {
                             user ?
                                 <>
                                     <span>{user.displayName}</span>
-                                    <button className="btn btn-primary" onClick={signout}>Logout</button>
+                                    <button className="btn btn-primary w-25" onClick={signout}>Logout</button>
                                 </> :
-                                <button className="btn btn-primary" onClick={signin}>Login</button>
+                                <button className="btn btn-primary w-25" onClick={signin}>Login</button>
                     }
                     {cart.size === 0 ?
                         <span id="r-span"><Link className="nav-item nav-link active" to='/shop'><i className="fa-solid fa-cart-shopping"></i></Link></span> :
